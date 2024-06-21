@@ -114,10 +114,8 @@ class TTS():
         mp3Filename = waveFilename[:-4] + ".mp3"
         with open(mp3Filename, 'wb') as audio_out:
             audio_out.write(audio_stream)
-        os.system("sox %s -c 1 -r %s %s" %
-                  (mp3Filename, waveRate, waveFilename))
-        # os.system("rm %s" % mp3Filename)
-        return waveFilename
+
+        return mp3Filename
 
     # Fix the time to match Americanisms
     def _hr_cr(self, hr):
@@ -265,7 +263,9 @@ class Anki:
         html = markdown(content)
         content = ''.join(BeautifulSoup(html, "html.parser").findAll(text=True))
         content = content.replace('&','').replace("[#!","").replace("#!]","").replace("\\n","")
-        waveFilename = "voices/%s.wav" % self._get_hash(content)
+        #waveFilename = "voices/%s.wav" % self._get_hash(content)
+
+        waveFilename = "voices/%s.mp3" % self._get_hash(content)
         if not os.path.exists(waveFilename):
             ttsInstance = TTS()
             ttsInstance.ipAddr = "wss://speech.platform.bing.com/"
@@ -456,7 +456,6 @@ class AnkiApp(QMainWindow):
         question = self.anki.questions[questionId]
         
         html = self.anki.htmlTemplate % self.anki.answer_to_html(question["answer"])
-        print(html)
         self.htmlView.setHtml(html)
 
         if self.voiceCheckbox.isChecked():
