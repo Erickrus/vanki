@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          extensions: ["tex2jax.js"],
+          jax: ["input/TeX", "output/HTML-CSS"],
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true
+          },
+          "HTML-CSS": { fonts: ["TeX"] }
+        });
+      </script>
+    <script>
+        function toggle(text) {
+            var button = document.activeElement;
+            var textNode = document.createTextNode(text);
+            textNode.innerHTML = text;
+            button.parentNode.replaceChild(textNode, button);
+            MathJax.Hub.Typeset()
+        }
+    </script>
+</head>
+
+<body>
+%s
+</body>
+
+</html>

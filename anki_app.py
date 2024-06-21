@@ -193,21 +193,7 @@ class TTS():
     def get_wav(self, text, wavFilename, rate=16000, mono=True):
         self.get_wav_ms(text, wavFilename)
 
-htmlTemplate = '''
-<html>
-<head>
-<script>
-function toggle(text) {
-    var button = document.activeElement;
-    var textNode = document.createTextNode(text);
-    button.parentNode.replaceChild(textNode, button);
-}
-</script>
-</head>
-<body>
-%s
-</body>
-</html>'''
+
 
 AnkiOrderType = Enum('AnkiOrderType', ['SEQUENCE', 'RANDOM'])
 class Anki:
@@ -216,6 +202,8 @@ class Anki:
         self.title = ""
         self.questions = []
         self.orderType = AnkiOrderType.SEQUENCE
+        with open("anki_html_template.html", "r") as f:
+            self.htmlTemplate = f.read()
 
     def load(self, filename):
         self.questionId = 0
@@ -467,7 +455,8 @@ class AnkiApp(QMainWindow):
         questionId = int(self.questionIdInput.value())
         question = self.anki.questions[questionId]
         
-        html = htmlTemplate % self.anki.answer_to_html(question["answer"])
+        html = self.anki.htmlTemplate % self.anki.answer_to_html(question["answer"])
+        print(html)
         self.htmlView.setHtml(html)
 
         if self.voiceCheckbox.isChecked():
