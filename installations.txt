@@ -1,1 +1,0 @@
-apt install -y sox libsox-fmt-all
