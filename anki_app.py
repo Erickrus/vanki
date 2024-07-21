@@ -415,7 +415,8 @@ class AnkiApp(QMainWindow):
                 ensure_ascii=False, 
                 indent=2
             )
-        ) 
+        )
+        self.htmlView.setHtml("")
 
     def open_file(self):
         filePath, _ = QFileDialog.getOpenFileName(self, "Open File", "", "ANKI Files (*.json)")
