@@ -13,6 +13,9 @@ pip3 install -r requirements.txt
 python3 anki_app.py
 ```
 
+![demo](https://github.com/Erickrus/vanki/blob/main/demo.gif?raw=true)
+
+
 ## JSON Grammar
 
 Support both fill in the blanks and multiple choices. All questions are organized in the JSON file. You will need question and answer for each entry. Notice, you if want something appear as blank use `[#!` and `#!]` to enclose the text.
