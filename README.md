@@ -1,7 +1,7 @@
 
 # VANKI
 
-Voice ANKI is a Desktop application based on pyqt6. It can help users to quickly memorize the content of questions with answer sheets. Currently, answer sheets support fill-in-the-blank questions and multiple-choice questions. In order to improve the memory effect, the application also supports a voice reading. [中文版](https://github.com/Erickrus/vanki/blob/main/README_CN.md)
+Voice ANKI is a Desktop application based on [pyqt6](https://www.riverbankcomputing.com/software/pyqt/). It can help users to quickly memorize the content of questions with answer sheets. Currently, answer sheets support fill-in-the-blank questions and multiple-choice questions. In order to improve the memory effect, the application also supports a voice reading. [中文版](https://github.com/Erickrus/vanki/blob/main/README_CN.md)
 
 ## Installation
 
