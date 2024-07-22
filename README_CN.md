@@ -19,7 +19,7 @@ python3 anki_app.py
 ![demo](https://github.com/Erickrus/vanki/blob/main/demo.gif?raw=true)
 
 
-## JSON 语法
+## 答题卡 JSON 语法
 
 支持填空题和多选题。所有答题卡都以JSON形式组织。每个答题卡片需要包含"question"和"answer"。注意，如果您希望某些内容显示为填空形式，请使用 `[#!` 和 `#!]` 来包住填空内容。
 
