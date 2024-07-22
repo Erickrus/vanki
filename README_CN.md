@@ -1,7 +1,7 @@
 
 # VANKI
 
-Voice ANKI 是一款基于pyqt6的桌面应用，可以帮助用户使用答题卡快速记忆题目内容，目前答题卡支持填空题和选择题，为了提高记忆效果，应用还支持语音朗读。
+Voice ANKI 是一款基于[pyqt6](https://www.riverbankcomputing.com/software/pyqt/)的桌面应用，可以帮助用户使用答题卡快速记忆题目内容，目前答题卡支持填空题和选择题，为了提高记忆效果，应用还支持语音朗读。
 [English version](https://github.com/Erickrus/vanki/blob/main/README.md)
 
 ## 安装
