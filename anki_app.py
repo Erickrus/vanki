@@ -456,11 +456,19 @@ class AnkiApp(QMainWindow):
         questionId = int(self.questionIdInput.value())
         question = self.anki.questions[questionId]
         
-        html = self.anki.htmlTemplate % self.anki.answer_to_html(question["answer"])
-        self.htmlView.setHtml(html)
+        if "choices" in question:
+            html = self.anki.htmlTemplate % self.anki.answer_to_html("<br/>".join(question["choices"])+"<br/>"+"[#!"+question["answer"]+"#!]")
+            self.htmlView.setHtml(html)
+        else:
+            html = self.anki.htmlTemplate % self.anki.answer_to_html(question["answer"])
+            self.htmlView.setHtml(html)
 
         if self.voiceCheckbox.isChecked():
-            self.anki.say(question["answer"])
+            if "choices" in question:
+                answer = question["choices"][ord(question["answer"].strip().upper()[0])-65]
+                self.anki.say(answer)
+            else:
+                self.anki.say(question["answer"])
     
     @pyqtSlot()
     def save_editor_content(self):
