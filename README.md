@@ -26,11 +26,11 @@ Support both fill in the blanks and multiple choices. All questions are organize
 {
   "questions": [
     {
-      "question": "请回答中国地理之最相关的问题",
-      "answer": "中国的面积约为[#!960万#!]平方公里，是世界上面积第三大的国家。"
+      "question": "Please answer the most relevant questions about US geography",
+      "answer": "With an area of almost [#!3,800,000#!] square miles ([#!9,840,000#!] square km), the United States is the [#!fourth#!] largest country in the world"
     },
     {
-      "question": "有5张卡片，上面的数字分别是0、4、5、6、7，从中抽出3张所组成的三位数中能被4整除的有（ ）个。",
+      "question": "There are 5 cards with numbers 0, 4, 5, 6, and 7 on them. How many three-digit numbers can be divided by 4 when 3 cards are drawn?",
       "choices": [
         "A 11",
         "B 12",
